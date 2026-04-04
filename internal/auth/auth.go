@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 	"strings"
-
+)
 
 var ErrNoAuthHeaderIncluded = errors.New("no authorization header included")
 
