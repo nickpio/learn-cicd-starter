@@ -30,5 +30,9 @@ func respondWithJSON(w http.ResponseWriter, code int, payload interface{}) {
 		return
 	}
 	w.WriteHeader(code)
-	w.Write(dat)
+	if _, err := w.Write(dat); err != nil {
+		// Log it with context — this is often useful for debugging client disconnects
+		log.Printf("Error writing JSON response (status %d, size %d bytes): %v",
+			code, len(dat), err)
+	}
 }
