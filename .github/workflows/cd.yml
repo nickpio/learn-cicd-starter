@@ -1,9 +1,10 @@
 on:
   push:
     branches: [main]
-    
-    jobs:
-      Deploy:
-        - name: Build
-          run: ./scripts/buildprod.sh
 
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: ./scripts/buildprod.sh
