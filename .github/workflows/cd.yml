@@ -16,5 +16,5 @@ jobs:
         uses: google-github-actions/setup-gcloud@v3
 
       - name: Push GCloud
-        run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-492423/notely-ar-repo
+        run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-492423/notely-ar-repo/notely:latest --project notely-492423
         
